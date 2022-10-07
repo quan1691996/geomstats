@@ -1,0 +1,9 @@
+from geomstats.geometry.hypersphere import Hypersphere
+from geomstats.learning.online_kmeans import OnlineKMeans
+
+sphere = Hypersphere(dim=5)
+
+data = sphere.random_uniform(n_samples=10)
+
+clustering = OnlineKMeans(metric=sphere.metric, n_clusters=4)
+clustering = clustering.fit(data)
